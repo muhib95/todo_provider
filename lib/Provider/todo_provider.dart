@@ -16,4 +16,12 @@ void removeTodo(TodoModel todoModel){
   notifyListeners();
 
 }
+
+void toggle(TodoModel toDOModel){
+  final index=_todoList.indexOf(toDOModel);
+  _todoList[index].toggleCompleted();
+  notifyListeners();
+
+
+}
 }
