@@ -7,6 +7,8 @@ import 'package:todo_provider/Provider/imagepicker_provider.dart';
 import '../../utils/image_source_dialogue.dart';
 
 class ImagePickerScreen extends StatefulWidget {
+  const ImagePickerScreen({super.key});
+
   @override
   _ImagePickerScreenState createState() => _ImagePickerScreenState();
 }
@@ -50,6 +52,8 @@ class _ImagePickerScreenState extends State<ImagePickerScreen> {
               },
               child: Text("Clear Image"),
             ),
+          SizedBox(height: 20),
+          CircleAvatar(),
         ],
       ),
     );

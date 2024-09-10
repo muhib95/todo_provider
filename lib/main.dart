@@ -7,6 +7,7 @@ import 'package:todo_provider/Provider/imagepicker_provider.dart';
 import 'package:todo_provider/Provider/todo_provider.dart';
 import 'package:todo_provider/view/Counter/counter_screen.dart';
 import 'package:todo_provider/view/image_upload/image_upload.dart';
+import 'package:todo_provider/view/register.dart';
 import 'package:todo_provider/view/screen/home_screen.dart';
 
 void main() {
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: ImagePickerScreen(),
+      home: Register(),
     );
   }
 }
