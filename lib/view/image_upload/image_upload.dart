@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_provider/Provider/imagepicker_provider.dart';
 
+import '../../utils/image_source_dialogue.dart';
+
 class ImagePickerScreen extends StatefulWidget {
   @override
   _ImagePickerScreenState createState() => _ImagePickerScreenState();
@@ -34,9 +36,7 @@ class _ImagePickerScreenState extends State<ImagePickerScreen> {
 
           // Button to pick an image
           ElevatedButton(
-            onPressed: () {
-              imagePickerProvider.pickImage();
-            },
+            onPressed: () => showImageSourceDialog(context),
             child: Text("Pick Image from Camera"),
           ),
 

@@ -6,11 +6,11 @@ class ImagePickerProvider with ChangeNotifier {
 
   XFile? get pickedImage => _pickedImage;
 
-  Future<void> pickImage() async {
+  Future<void> pickImage(ImageSource source) async {
     final ImagePicker picker = ImagePicker();
     try {
       final XFile? image = await picker.pickImage(
-        source: ImageSource.camera,
+        source: source,
         preferredCameraDevice: CameraDevice.front,
       );
       if (image != null) {
