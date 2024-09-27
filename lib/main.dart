@@ -5,12 +5,17 @@ import 'package:provider/provider.dart';
 import 'package:todo_provider/Provider/counter_provider.dart';
 import 'package:todo_provider/Provider/imagepicker_provider.dart';
 import 'package:todo_provider/Provider/todo_provider.dart';
-import 'package:todo_provider/view/Counter/counter_screen.dart';
-import 'package:todo_provider/view/image_upload/image_upload.dart';
-import 'package:todo_provider/view/register.dart';
-import 'package:todo_provider/view/screen/home_screen.dart';
+import 'package:todo_provider/view/hive_screen.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  Box box = await Hive.openBox('country-list');
+  box.put('country', 'Bangladesh');
+  box.put('country', 'India');
+  print('From hive: ${box.get('country')}');
   runApp(
     MultiProvider(providers: [
       ChangeNotifierProvider(create: (context) => TodoProvider()),
@@ -34,7 +39,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Register(),
+      home: HiveScreen(),
     );
   }
 }
